@@ -72,7 +72,7 @@ export const query = (ipfs: IpfsPlugin): PluginModule => ({
 });
 ```
 
-Now that we understand what the api-resolver interface + implementations look like, we can start to look at how the toolchain uses them. It's pretty straight forward, whenever [the "resolve-uri" core algorithm](TODO) is called, it gets all api-resolver implementations it knows about:
+Now that we understand what the api-resolver interface + implementations look like, we can start to look at how the toolchain uses them. It's pretty straight forward, whenever [the "resolve-uri" core algorithm](https://github.com/polywrap/monorepo/blob/prealpha/packages/js/core/src/algorithms/resolve-uri.ts) is called, it gets all api-resolver implementations it knows about:
 ```typescript
 const uriResolverImplementations = getImplementations(
   new Uri("w3://ens/api-resolver.core.web3api.eth"),

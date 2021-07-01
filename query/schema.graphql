@@ -1,0 +1,14 @@
+#import { Query, MaybeUriOrManifest } into ApiResolver from "w3://ens/api-resolver.core.web3api.eth"
+#import { Query } into Ens from "w3://ens/ens.web3api.eth"
+#import { Query } into Ipfs from "w3://ens/ipfs.web3api.eth"
+
+type Query implements ApiResolver_Query {
+  tryResolveUri(
+    authority: String!
+    path: String!
+  ): ApiResolver_MaybeUriOrManifest
+
+  getFile(
+    path: String!
+  ): Bytes
+}

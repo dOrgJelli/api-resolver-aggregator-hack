@@ -1,0 +1,16 @@
+type Query {
+  tryResolveUri(
+    authority: String!
+    path: String!
+  ): MaybeUriOrManifest
+
+  getFile(
+    path: String!
+  ): Bytes
+}
+
+type MaybeUriOrManifest {
+  newUri: String
+  packageManifest: String
+  newResolverUri: String
+}
